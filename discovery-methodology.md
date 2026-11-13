@@ -1,0 +1,9 @@
+# Discovery and triage
+## Dual paths
+Evidence-first: query relevant vendors' customer stories, conference session archives, official webinar/podcast pages, interviews, and corporate announcements. Opportunity-first: query role family + capabilities against employer career sites and ATS platforms. Each source gets source_id, URL, title, source_type, publication_date (or null), observed_at, employer, technology, claim, and credibility tier. Record whether the company is a named customer or merely a sponsor/speaker; speaking at a conference alone does not prove use of the vendor's product.
+## Credibility tiers
+A: original employer/ATS listing for job status; original vendor customer case study, original conference talk/transcript, official company filing or statement for corresponding claims. B: reputable reporting or first-person interview/podcast with identifiable participant and date. C: secondary summaries, marketing commentary, undated reposts; discovery only until corroborated. Dates and specificity influence confidence independently of tier.
+## Research budgets
+Target 25 distinct companies, screen relevant job openings, deeply research at most five verified opportunities. Deduplicate subsidiaries/brands carefully; retain legal hiring entity. Avoid industry concentration by including both discovery paths when viable. Track examined companies even if no verified jobs; only verified openings appear in ranked results. Prefer last 36 months for initiative relevance but older case studies may establish historical footprints, not current needs. Search broad enough to find alternatives, then stop at budget or documented access limit.
+## Evidence discipline
+Quote or summarize precise supported facts, not generic conjecture. For each hypothesis include supporting signals, alternative explanations, and a question that could disconfirm it. No assumption that a solved challenge persists.

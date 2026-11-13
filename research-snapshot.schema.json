@@ -1,0 +1,461 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CareerIntelligenceResearchSnapshot",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "run_id",
+    "run_at",
+    "candidate_id",
+    "research_scope",
+    "companies_screened",
+    "sources",
+    "jobs",
+    "contacts",
+    "change_log"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "run_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "candidate_id": {
+      "type": "string"
+    },
+    "previous_run_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "research_scope": {
+      "type": "object",
+      "properties": {
+        "company_target": {
+          "type": "integer"
+        },
+        "deep_brief_target": {
+          "type": "integer"
+        },
+        "discovery_paths": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "companies_screened": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "employer_id",
+          "name"
+        ],
+        "properties": {
+          "employer_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "website": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "source_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "screening_outcome": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "source_id",
+          "url",
+          "source_type",
+          "observed_at",
+          "claim"
+        ],
+        "properties": {
+          "source_id": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "source_type": {
+            "type": "string"
+          },
+          "title": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "publication_date": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "observed_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "tier": {
+            "enum": [
+              "A",
+              "B",
+              "C"
+            ]
+          },
+          "claim": {
+            "type": "string"
+          },
+          "supports": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "jobs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "job_key",
+          "employer_id",
+          "title",
+          "canonical_url",
+          "verification_status",
+          "verified_at",
+          "score"
+        ],
+        "properties": {
+          "job_key": {
+            "type": "string"
+          },
+          "employer_id": {
+            "type": "string"
+          },
+          "job_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "title": {
+            "type": "string"
+          },
+          "canonical_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "verification_status": {
+            "enum": [
+              "verified_open",
+              "unverified",
+              "no_longer_verified",
+              "confirmed_closed"
+            ]
+          },
+          "verified_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "location": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "work_arrangement": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "compensation": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "posting_date": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "source_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "score": {
+            "type": "object",
+            "required": [
+              "role_fit",
+              "company_relevance",
+              "relationship_access",
+              "career_alignment",
+              "weighted_score",
+              "coverage",
+              "provisional",
+              "evidence_confidence"
+            ],
+            "properties": {
+              "role_fit": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0,
+                "maximum": 100
+              },
+              "company_relevance": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0,
+                "maximum": 100
+              },
+              "relationship_access": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0,
+                "maximum": 100
+              },
+              "career_alignment": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0,
+                "maximum": 100
+              },
+              "weighted_score": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0,
+                "maximum": 100
+              },
+              "coverage": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "provisional": {
+                "type": "boolean"
+              },
+              "evidence_confidence": {
+                "enum": [
+                  "high",
+                  "medium",
+                  "low"
+                ]
+              },
+              "hard_constraint_status": {
+                "enum": [
+                  "passed",
+                  "requires_confirmation",
+                  "excluded"
+                ]
+              },
+              "rationale": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": true
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "contacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "contact_id",
+          "name",
+          "relationship_status"
+        ],
+        "properties": {
+          "contact_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "employer_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "title": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "relationship_status": {
+            "enum": [
+              "confirmed_direct",
+              "exported_company_unverified",
+              "possible_identity_match",
+              "unconnected_stakeholder",
+              "unknown"
+            ]
+          },
+          "source_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "deep_briefs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "job_key",
+          "facts",
+          "hypotheses",
+          "resume_gaps",
+          "interview_questions"
+        ],
+        "properties": {
+          "job_key": {
+            "type": "string"
+          },
+          "facts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "claim": {
+                  "type": "string"
+                },
+                "source_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "hypotheses": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "hypothesis": {
+                  "type": "string"
+                },
+                "supporting_source_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "alternative_explanation": {
+                  "type": "string"
+                },
+                "validation_question": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "resume_gaps": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "interview_questions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "change_log": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "job_key",
+          "change_type"
+        ],
+        "properties": {
+          "job_key": {
+            "type": "string"
+          },
+          "change_type": {
+            "enum": [
+              "new_to_research",
+              "changed",
+              "still_open",
+              "no_longer_verified",
+              "confirmed_closed"
+            ]
+          },
+          "explanation": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

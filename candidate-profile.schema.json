@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CandidateProfile",
+  "type": "object",
+  "required": [
+    "candidate_id",
+    "source_inputs",
+    "capabilities",
+    "preferences"
+  ],
+  "properties": {
+    "candidate_id": {
+      "type": "string"
+    },
+    "source_inputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "classification",
+          "evidence"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "classification": {
+            "enum": [
+              "demonstrated",
+              "declared",
+              "transferable",
+              "unknown"
+            ]
+          },
+          "evidence": {
+            "type": "string"
+          },
+          "source_ref": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "target_roles": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "preferences": {
+      "type": "object",
+      "properties": {
+        "geography": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "work_arrangement": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "compensation_min": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "travel": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "hard_constraints": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}
