@@ -1,2 +1,0 @@
-# Gemini adaptation (secondary)
-Use SKILL.md as core system instructions in a supported Gemini Gem or developer workflow, with supporting documents accessible as knowledge/context. If file attachments, web grounding, or artifact export are not supported in the chosen interface, mark those functions unavailable; never imply jobs were verified. For repeated runs, upload previous JSON snapshot. A Gem is not necessarily equivalent to a Claude Skill.
