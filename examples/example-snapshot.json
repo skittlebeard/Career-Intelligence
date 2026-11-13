@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "run_id": "SYNTHETIC-EXAMPLE",
+  "run_at": "2026-11-13T20:00:00Z",
+  "candidate_id": "example-candidate",
+  "previous_run_id": null,
+  "research_scope": {
+    "company_target": 25,
+    "deep_brief_target": 5,
+    "discovery_paths": [
+      "evidence_first",
+      "opportunity_first"
+    ],
+    "limitations": [
+      "Synthetic fixture only; no live research performed"
+    ]
+  },
+  "companies_screened": [],
+  "sources": [],
+  "jobs": [],
+  "contacts": [],
+  "deep_briefs": [],
+  "change_log": []
+}
