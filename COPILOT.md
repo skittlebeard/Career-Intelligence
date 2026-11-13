@@ -1,2 +1,0 @@
-# Microsoft Copilot Studio adaptation (optional)
-Create a Copilot Studio agent with instructions derived from SKILL.md. Add supporting methodology files as approved knowledge sources. Implement staged discovery, job verification, scoring, snapshot export and report generation as actions/flows only where authorized connectors, browsing, storage and licensing exist. Restrict contact data via appropriate permissions and retention. Require human review for outreach. Do not claim the declarative agent alone can browse all ATS sites or autonomously create documents.
